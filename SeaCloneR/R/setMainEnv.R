@@ -1,0 +1,3 @@
+setMainEnv <- function() {
+  return(NULL)
+}
