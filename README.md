@@ -56,7 +56,7 @@ SOURCE : IFREMER - BIOLOGIE
 - Cartes mensuelles moyennes de turbidité réalisées sur la période 2003-2010 - Décembre
 SOURCE : IFREMER - OCÉANOGRAPHIE PHYSIQUE
 
-- Carte d habitats physiques des fonds marins Atlantique (échelle 1 / 1 000 000) - Version 2011
+- Carte d'habitats physiques des fonds marins Atlantique (échelle 1 / 1 000 000) - Version 2011
 SOURCE : IFREMER - BIOLOGIE
 
 - Carte des habitats intertidaux du site Natura 2000 FR5300023 - Archipel des Glénan (2005)
@@ -83,3 +83,4 @@ SOURCE : GEBCO - UNESCO
 
 ### impact humain
 - AIS
+
