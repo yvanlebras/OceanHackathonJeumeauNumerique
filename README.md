@@ -82,6 +82,10 @@ SOURCE : OCEAN-HACKATHON
 - GEBCO_LATEST
 SOURCE : GEBCO - UNESCO
 
+- EMODnet 
+  - Dataset information website: https://www.emodnet-biology.eu/thermal-affinities-european-marine-species
+  - GitHub page for the dataset: https://github.com/EMODnet/EMODnet-Biology-thermal-traits
+
 ### Climat
 
 ### Météo
