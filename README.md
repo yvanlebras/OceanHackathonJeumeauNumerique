@@ -5,8 +5,14 @@
 ### Ilias et Brian : 3D guys
 Avec aide + ou - ponctuelle d'Elie notamment sur la création de modèle 3D via Blender par exemple
 
-#### Tâche 1
-- 
+#### Tâches proposées
+- Génération automatique (par code et non interaction avec GUI Unreal) du terrain via heightmap
+  - voir le code source de cashgenue https://github.com/midgen/cashgenUE si possibilité de trouver si réutilisable
+  - voir code source de Unreal pour voir comment il procède à partir d'un PNG 16bits en dégradé de gris et si réutilisable
+- Ajout auto de texture à partir fichier de données 'sédiments"
+- Ajout auto de données "biologiques"
+
+### 
 
 
 ## Données potentiellement intéressantes
@@ -14,7 +20,7 @@ Avec aide + ou - ponctuelle d'Elie notamment sur la création de modèle 3D via 
 ### Données Environnement physique
 - SHOM litto3D Bathymetrie pour la 3D
 - SHOM carte sédimentaire pour la texture
--
+
 ### Données Biologiques
 - Sensibilité des ressources halieutiques aux activités d'extraction de granulats marins
 SOURCE : IFREMER - GRANULATS MARINS
