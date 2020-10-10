@@ -35,6 +35,8 @@ Avec aide + ou - ponctuelle d'Yvan et tous
 - voir comment y inclure un jumeau numérique 3d, en HTML5 ?
 
 ## Données potentiellement intéressantes
+Source des données :
+- Indigeo: https://oceanhackathon.indigeo.fr/geocms/maps/oceanhackathon-wpjdbpbc#project
 
 ### Données Environnement physique
 - SHOM litto3D Bathymetrie pour la 3D
