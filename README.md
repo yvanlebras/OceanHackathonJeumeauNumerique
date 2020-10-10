@@ -39,8 +39,8 @@ Source des données :
 - Indigeo: https://oceanhackathon.indigeo.fr/geocms/maps/oceanhackathon-wpjdbpbc#project
 
 ### Données Environnement physique
-- SHOM litto3D Bathymetrie pour la 3D
-- SHOM carte sédimentaire pour la texture
+- SHOM litto3D Bathymetrie pour la 3D / dalle 0175-6760 du SHOM
+- SHOM carte sédimentaire pour la texture / 
 
 ### Données Biologiques
 - Sensibilité des ressources halieutiques aux activités d'extraction de granulats marins
