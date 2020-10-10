@@ -35,6 +35,9 @@ Avec aide + ou - ponctuelle d'Yvan et tous
 - voir comment y inclure un jumeau numérique 3d, en HTML5 ?
 
 ## Données potentiellement intéressantes
+
+![alt text](https://github.com/yvanlebras/OceanHackathonJeumeauNumerique/IMG_20201010_095723.jpg)
+
 Source des données :
 - Indigeo: https://oceanhackathon.indigeo.fr/geocms/maps/oceanhackathon-wpjdbpbc#project
 
