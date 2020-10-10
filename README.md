@@ -36,8 +36,6 @@ Avec aide + ou - ponctuelle d'Yvan et tous
 
 ## Données potentiellement intéressantes
 
-!()[https://github.com/yvanlebras/OceanHackathonJeumeauNumerique/raw/main/IMG_20201010_095723.jpg]
-
 <img src="https://github.com/yvanlebras/OceanHackathonJeumeauNumerique/raw/main/IMG_20201010_095723.jpg" width="800" />
 
 Source des données :
