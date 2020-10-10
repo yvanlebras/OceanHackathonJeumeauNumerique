@@ -1,3 +1,4 @@
-.bgmap {
-  background-image: url("www/map.png");
+.gauge {
+  background: #4e5255;
+  padding: 3px;
 }
