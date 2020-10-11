@@ -27,6 +27,9 @@ RUN R -e 'remotes::install_cran("glue")'
 RUN R -e 'remotes::install_cran("htmltools")'
 RUN R -e 'install.packages("lubridate")'
 RUN R -e 'install.packages("readr")'
+RUN R -e 'remotes::install_cran("shinyWidgets")'
+RUN R -e 'remotes::install_github("pedrocoutinhosilva/shiny.grid")'
+RUN R -e 'remotes::install_cran("shinyTree")'
 RUN R -e 'install.packages("reader")'
 RUN R -e 'remotes::install_cran("data.table")'
 RUN R -e 'remotes::install_cran("dplyr")'
@@ -37,9 +40,9 @@ RUN R -e 'remotes::install_cran("config")'
 RUN mkdir -p /srv/shiny-server/apps/seaclone
 COPY SeaCloneR_*.tar.gz /srv/shiny-server/apps/seaclone.tar.gz
 RUN R -e 'remotes::install_local("/srv/shiny-server/apps/seaclone.tar.gz", dependencies=TRUE)'
-# COPY Rprofile.site /usr/local/lib/R/etc # apparently, deprecated
+COPY Rprofile.site /usr/local/lib/R/etc
 
 RUN chmod -R 755 /srv/shiny-server/
 EXPOSE 3838
 
-CMD ["R","-e SeaClone::::run_app()"]
+CMD ["R","-e SeaCloneR::run_app()"]
