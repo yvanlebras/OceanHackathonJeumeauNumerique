@@ -15,6 +15,7 @@ run_app <- function(
   
   shinyApp(
     ui = app_ui,
-    server = app_server
+    server = app_server,
+    options = list(launch.browser = TRUE)
   )
 }

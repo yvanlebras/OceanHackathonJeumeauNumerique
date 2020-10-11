@@ -18,10 +18,13 @@ app_server <- function( input, output, session ) {
   output$money_gauge <- renderUI({
     div(
       class = "filled_gauge",
-      style = paste0("
-        width:", (10+main.env$resources$money)/1.1,"%;
-        background-color: gold;
-      ")
+      style = paste0(
+        "background: linear-gradient(95deg, gold ",
+        (10+main.env$resources$money)/1.1,
+        "%, white ",
+        (10+main.env$resources$money)/1.1,
+        "%);"
+      )
     )
   })
   
@@ -29,10 +32,13 @@ app_server <- function( input, output, session ) {
   output$quality_gauge <- renderUI({
     div(
       class = "filled_gauge",
-      style = paste0("
-        width:", (10+main.env$resources$quality)/1.1,"%;
-        background-color: steelblue;
-      ")
+      style = paste0(
+        "background: linear-gradient(95deg, steelblue ",
+        (10+main.env$resources$quality)/1.1,
+        "%, white ",
+        (10+main.env$resources$quality)/1.1,
+        "%);"
+      )
     )
   })
   
@@ -40,10 +46,13 @@ app_server <- function( input, output, session ) {
   output$administration_gauge <- renderUI({
     div(
       class = "filled_gauge",
-      style = paste0("
-        width:", (10+main.env$resources$administration)/1.1,"%;
-        background-color: blueviolet;
-      ")
+      style = paste0(
+        "background: linear-gradient(95deg, blueviolet",
+        (10+main.env$resources$administration)/1.1,
+        "%, white ",
+        (10+main.env$resources$administration)/1.1,
+        "%);"
+      )
     )
   })
   

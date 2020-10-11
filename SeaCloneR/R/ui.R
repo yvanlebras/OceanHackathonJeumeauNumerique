@@ -37,8 +37,7 @@ app_ui <- function(request) {
           height = "80px", 
           width = "80px"
         ),
-        "SeaClone",
-        actionButton("dev", "DEV")
+        "SeaClone"
       ),
       
       # calendar ----
