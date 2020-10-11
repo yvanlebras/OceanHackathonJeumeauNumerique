@@ -1,3 +1,8 @@
+.town {
+  color: red;
+  border: 2px solid black;
+}
+
 .gauge {
   background: #4e5255;
   padding: 3px;
