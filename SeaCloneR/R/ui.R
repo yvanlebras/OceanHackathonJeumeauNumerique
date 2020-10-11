@@ -6,43 +6,134 @@
 #' @noRd
 app_ui <- function(request) {
   tagList(
+    # CSS
+    htmltools::includeCSS(
+      system.file("app/www/styles.css", package = "SeaCloneR")
+    ),
+    # enable JS
+    shinyjs::useShinyjs(),
     # List the first level UI elements here 
     shiny.grid::gridPage(
       # main grid ----
       areas = c(
-        "header header header",
-        "time time time",
-        "left gridmap right"
+        "_title _title _title",
+        "calendar gridmap insight",
+        "footer footer footer"
       ),
-      rows = "75px 75px 1fr",
+      rows = "120px 1fr 30px",
       
       # header ----
       div(
-        class = "header",
-        style = "background-color: #28a992; font-size: 40px; padding: 5px",
-        "SeaClone"
+        class = "_title",
+        style = "padding: 5px",
+        tags$img(src="/logo.png", height = "80px", width = "80px"),
+        "SeaClone",
+        actionButton("dev", "DEV")
       ),
       
-      
-      # time ----
-      div(
-        class = "time",
-        
+      # calendar ----
+      shiny.grid::gridPanel(
+        class = "calendar",
+        areas = c(
+          "task task done  ",
+          "jan feb mar",
+          "apr may jun",
+          "jul aug sep",
+          "oct nov dec"
+        ),
+        rows = "1fr 2fr 2fr 2fr 2fr",
+        columns = "1fr 1fr 1fr",
+        div(
+          id = "calendar_task",
+          class = "task",
+          tags$b("Aujourd'hui: réunion à 9h, plongée à 14h.")
+        ),
+        div(
+          id = "calendar_done",
+          classe = "done",
+          shinyjs::disabled(
+            actionButton("next", "Fini !", icon("chevron-right"))
+          )
+        ),
+        div(
+          id = "calendar_jan",
+          class="jan",
+          "Janvier",
+          uiOutput("jan")
+        ),
+        div(
+          id = "calendar_feb",
+          class="feb",
+          "Fevrier",
+          uiOutput("feb")
+        ),
+        div(
+          id = "calendar_mar",
+          class="mar",
+          "Mars",
+          uiOutput("mar")
+        ),
+        div(
+          id = "calendar_apr",
+          class="apr",
+          "Avril",
+          uiOutput("avr")
+        ),
+        div(
+          id = "calendar_may",
+          class="may",
+          "Mai",
+          uiOutput("mai")
+        ),
+        div(
+          id = "calendar_jun",
+          class="jun",
+          "Juin",
+          uiOutput("jun")
+        ),
+        div(
+          id = "calendar_jul",
+          class="jul",
+          "Juillet",
+          uiOutput("jul")
+        ),
+        div(
+          id = "calendar_aug",
+          class="aug",
+          "Aout",
+          uiOutput("aug")
+        ),
+        div(
+          id = "calendar_sep",
+          class="sep",
+          "Septembre",
+          uiOutput("sep")
+        ),
+        div(
+          id = "calendar_oct",
+          class="oct",
+          "Octobre",
+          uiOutput("oct")
+        ),
+        div(
+          id = "calendar_nov",
+          class="nov",
+          "Novembre",
+          uiOutput("nov")
+        ),
+        div(
+          id = "calendar_dec",
+          class="dec",
+          "Decembre",
+          uiOutput("dec")
+        )
       ),
       
-      # left ----
-      div(
-        class = "left"
-      ),
-      
-      # grid ----
-      # overlay 10x10
+      # map ----
+      # * overlay 10x10 ====
       shiny.grid::gridPanel(
         class = "gridmap",
         # Background image
-        # shinyWidgets::setBackgroundImage(
-        #   src = "/map.png" #, width="500px", height="500px"
-        # ),
         areas = c( # avoid hX since it is a css class
           "a1 b1 c1 d1 e1 f1 g1 i1 j1 k1",
           "a2 b2 c2 d2 e2 f2 g2 i2 j2 k2",
@@ -58,83 +149,103 @@ app_ui <- function(request) {
         rows = "75px 75px 75px 75px 75px 75px 75px 75px 75px 75px",
         columns = "75px 75px 75px 75px 75px 75px 75px 75px 75px 75px",
         
+        # * background ====
         div(
           class = "a1",
           tags$img(src = "/map.png", width = "750px", height = "750px")
         ),
+        # * quimper ====
         div(
           class = "e1 town", 
           actionButton(
             "university",
-            "Quimper"
+            "",
+            icon = icon("user-graduate")
           )
         ),
+        # * benodet ====
         div(
           class = "e5 town", 
           actionButton(
             "opportunist_data",
-            "Benodet"
+            "",
+            icon = icon("anchor")
           )
         ),
+        # * port-la-foret ====
         div(
           class = "g4 town", 
           actionButton(
             "private_actor",
-            "Port-la-Foret"
+            "",
+            icon = icon("credit-card")
           )
         ),
+        # * concarneau ====
         div(
           class = "i5 town", 
           actionButton(
             "sbm",
-            "Concarneau"
+            "",
+            icon = icon("microscope")
           )
         ),
+        # * les glenans ====
         div(
-          class = "g9 town", 
+          class = "g8 town", 
           actionButton(
             "dive",
-            "Les Glenans"
+            "",
+            icon = icon("water")
           )
         )
       ),
       
-      # right ----
+      # insight ----
       shiny.grid::gridPanel(
-        class = "right",
+        class = "insight",
         areas = c(
           "money",
           "quality",
           "administration",
-          "blank",
           "bibliography"
         ),
+        rows = "1fr 1fr 1fr 10px 1fr",
         
+        # * money ====
         div(
           class = "money gauge",
-          icon("euro-sign") # "Money"
+          fluidRow(
+            column(1, icon("euro-sign")),
+            column(10, offset = 1, uiOutput("money_gauge"))
+          )
         ),
         
+        # * quality ====
         div(
           class = "quality gauge",
-          icon("flask") # "Quality"
+          fluidRow(
+            column(1, icon("flask")),
+            column(10, offset = 1, uiOutput("quality_gauge"))
+          )
         ),
         
+        # * administration ====
         div(
           class = "administration gauge",
-          icon("landmark") # "Administration"
+          fluidRow(
+            column(1, icon("landmark")),
+            column(10, offset = 1, uiOutput("administration_gauge"))
+          )
         ),
         
-        div(
-          class = "blank",
-          tags$hr()
-        ),
-        
+        # * bibliography ====
         div(
           class = "bibliography",
           actionButton(
-            "biblio",
-            "Bibliography"
+            "bibliography",
+            h3("Bibliographie"),
+            icon = icon("book-open", class = "h3")
           )
         )
       )

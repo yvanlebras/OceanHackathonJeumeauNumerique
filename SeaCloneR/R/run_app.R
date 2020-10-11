@@ -6,11 +6,17 @@
 #' @importFrom shiny shinyApp
 #' @importFrom golem with_golem_options
 run_app <- function(
-  ...
+  dev = FALSE
 ) {
   require(shiny)
   require(shinyWidgets)
   require(shiny.grid)
+  require(shinyTree)
   
-  shinyAppDir("R/")
+  shinyAppDir(
+    "R/", 
+    options = list(
+      launch.browser = TRUE
+    )
+  )
 }
