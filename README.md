@@ -8,8 +8,8 @@
 Avec aide + ou - ponctuelle d'Élie notamment sur la création de modèle 3D via Blender par exemple
 
 #### Créer png en nuances de gris (pour import dans Unreal) à partir de litto3d :
-·       Prendre fichier asc dans MNT1m (précision 1 mètres)
-·       Dans OSGeo4W shell, tapper la commande :
+- Prendre fichier asc dans MNT1m (précision 1 mètres)
+- Dans OSGeo4W shell, tapper la commande :
 ```	gdal_translate -of PNG -ot UInt16 -scale min max 0 65535 nom.asc output.png ```
 min et max sont visible dans QGIS quand on charge asc (carré noir et blanc sous le nom de l’asc)
 Ca va donner un heightmap 16 bit en nuance de gris (ce que veut unreal).
