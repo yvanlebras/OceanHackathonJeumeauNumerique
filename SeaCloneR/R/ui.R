@@ -5,6 +5,12 @@
 #' @import shiny
 #' @noRd
 app_ui <- function(request) {
+  # media
+  addResourcePath(
+    "media",
+    system.file("app/media", package = "SeaCloneR")
+  )
+  
   tagList(
     # CSS
     htmltools::includeCSS(
@@ -26,7 +32,11 @@ app_ui <- function(request) {
       div(
         class = "_title",
         style = "padding: 5px",
-        tags$img(src="/logo.png", height = "80px", width = "80px"),
+        tags$img(
+          src = "media/logo.png",
+          height = "80px", 
+          width = "80px"
+        ),
         "SeaClone",
         actionButton("dev", "DEV")
       ),
@@ -150,7 +160,11 @@ app_ui <- function(request) {
         # * background ====
         div(
           class = "a1",
-          tags$img(src = "/map.png", width = "750px", height = "750px")
+          tags$img(
+            src = "media/map.png",
+            width = "750px", 
+            height = "750px"
+          )
         ),
         # * quimper ====
         div(
@@ -192,7 +206,15 @@ app_ui <- function(request) {
         div(
           class = "g8 town", 
           actionButton(
-            "dive",
+            "dive_1",
+            "",
+            icon = icon("water")
+          )
+        ),
+        div(
+          class = "i8 town", 
+          actionButton(
+            "dive_2",
             "",
             icon = icon("water")
           )
