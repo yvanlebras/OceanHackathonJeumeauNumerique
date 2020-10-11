@@ -192,5 +192,12 @@ setMainEnv <- function() {
     main.env
   )
   
+  # Set events ====
+  assign(
+    "events",
+    data.table::fread(system.file("app/data/events.csv", package = "SeaCloneR")),
+    main.env
+  )
+  
   return(main.env)
 }

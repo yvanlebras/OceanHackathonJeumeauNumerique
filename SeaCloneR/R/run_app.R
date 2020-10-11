@@ -13,10 +13,8 @@ run_app <- function(
   require(shiny.grid)
   require(shinyTree)
   
-  shinyAppDir(
-    "R/", 
-    options = list(
-      launch.browser = TRUE
-    )
+  shinyApp(
+    ui = app_ui,
+    server = app_server
   )
 }

@@ -35,7 +35,7 @@ app_ui <- function(request) {
       shiny.grid::gridPanel(
         class = "calendar",
         areas = c(
-          "task task done  ",
+          "task task task  ",
           "jan feb mar",
           "apr may jun",
           "jul aug sep",
@@ -43,17 +43,15 @@ app_ui <- function(request) {
         ),
         rows = "1fr 2fr 2fr 2fr 2fr",
         columns = "1fr 1fr 1fr",
-        div(
+        shiny.grid::gridPanel(
           id = "calendar_task",
           class = "task",
-          tags$b("Aujourd'hui: réunion à 9h, plongée à 14h.")
-        ),
-        div(
-          id = "calendar_done",
-          classe = "done",
-          shinyjs::disabled(
+          areas = c("event next"),
+          columns = c("1fr 100px"),
+          div(class="event", textOutput("event")),
+          div(class="next", shinyjs::disabled(
             actionButton("next", "Fini !", icon("chevron-right"))
-          )
+          ))
         ),
         div(
           id = "calendar_jan",
@@ -112,7 +110,7 @@ app_ui <- function(request) {
         div(
           id = "calendar_oct",
           class="oct",
-          "Octobre",
+          "OCtobre",
           uiOutput("oct")
         ),
         div(
