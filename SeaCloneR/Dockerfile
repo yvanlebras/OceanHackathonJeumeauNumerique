@@ -37,7 +37,7 @@ RUN R -e 'remotes::install_cran("config")'
 RUN mkdir -p /srv/shiny-server/apps/seaclone
 COPY SeaCloneR_*.tar.gz /srv/shiny-server/apps/seaclone.tar.gz
 RUN R -e 'remotes::install_local("/srv/shiny-server/apps/seaclone.tar.gz", dependencies=TRUE)'
-COPY Rprofile.site /usr/local/lib/R/etc
+# COPY Rprofile.site /usr/local/lib/R/etc # apparently, deprecated
 
 RUN chmod -R 755 /srv/shiny-server/
 EXPOSE 3838
