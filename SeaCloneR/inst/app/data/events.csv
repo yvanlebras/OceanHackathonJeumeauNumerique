@@ -1,0 +1,12 @@
+nom	description	choix1	money1	quality1	administration1	choix2	money2	quality2	administration2	constraint
+Vacances d’été	Les stations balnéaires se remplissent et les propriétaires de bateaux profitent de la belle saison. L’occasion de leur demander un petit coup de pouce.	Sensibiliser les plaisanciers	0	-1	1	Récolter de la donnée opportuniste	0	1	-1	jun,jul,aug
+Ocean Hackathon	L’occasion de participer à la recherche autrement.	Participer	0	0	1	Participer	0	0	1	oct
+Congés	Souffler ne fait jamais de mal.	Oui, allez: direction Roscoff pour un rayon de soleil.	0	1	-1	Il me reste 3 papiers à finir d’écrire.	0	-1	1	once
+Galère informatique	Le responsable réseau vous prie de bien vouloir l’excuser de la gêne occasionnée	Râler	0	1	-1	Attendre	0	-1	1	once
+Prime régionale	Vous pouvez candidater à un appel d’offre de la part de la région pour développer votre domaine d’étude.	Tentons le coup.	2	-1	0	Trop de risque de ne pas l’avoir	0	0	0	once
+Erreur de stage	Le stagiaire engagé s’est trompé dans une manipulation.	Prendre le temps de corriger l’erreur.	0	-1	0	Réparer l’erreur	0	0	-1	once,intern
+Cours à l’université	Vous pouvez donner des cours à l’université.	Préparons les cahiers.	1	-1	0	Pas le temps.	0	0	-1	sep,oct, once
+Revue des pairs	Un article sorti dans une revue réputée s’intéresse à votre sujet. On vous demande de la passer en revue.	Voyons ce qui est dit.	0	0	1	Une autre fois.	0	0	0	once
+Marée noire	Une marée noire dans la Manche a forcé des espèces à se déporter sur le front Atlantique français.	Une opportunité à saisir !	0	1	0	Evitons ce risque à mon assurance.	0	0	1	once
+Coupe budgétaire	La secrétaire de votre unité vous informe qu’il risque d’y avoir des coupes sur certains projets.	Je travaille sur quelque chose de capital !	0	0	-1	Je peux alléger certains budgets.	-1	0	0	once
+Collaboration à l’étranger	Un chercheur thaïlandais vous propose une collaboration sur un séjour d’un mois.	Une occasion à ne pas louper, assurément !	-2	2	1	La Thaïlande, c’est loin …	0	0	0	once

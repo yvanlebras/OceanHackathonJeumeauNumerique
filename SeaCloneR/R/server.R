@@ -76,6 +76,31 @@ app_server <- function( input, output, session ) {
     )
   )
   
+  # * Time ----
+  browser()
+  # Event
+  
+  # Months display
+  sapply(main.env$time$MONTHS, function(mon) {
+    output[[mon]] <- renderUI({
+      mon.ind <- match(mon, isolate(main.env$time$MONTHS))
+      cur.ind <- match(isolate(main.env$time$month), isolate(main.env$time$MONTHS))
+      if(mon.ind < cur.ind)
+        return(
+          tagList(
+            tags$img(src = "/stamp.png", width = "750px", height = "750px")
+          )
+        )
+      else
+        return(tagList())
+    })
+  })
+  
+  # Time pass
+  observeEvent(input$`next`, {
+    
+  })
+  
   # Interactions ====
   
   observeEvent(input$university, {

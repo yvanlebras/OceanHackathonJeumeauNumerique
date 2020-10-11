@@ -17,7 +17,7 @@
   font-family: ocean;
 }
 
-.calendar div {
+.calendar > div {
   border: steelblue 2px solid;
   font-size: 20px;
   text-align: center;
