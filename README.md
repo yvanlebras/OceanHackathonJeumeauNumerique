@@ -7,6 +7,14 @@
 ### Ilias et Brian : 3D guys
 Avec aide + ou - ponctuelle d'Élie notamment sur la création de modèle 3D via Blender par exemple
 
+#### Créer png en nuances de gris (pour import dans Unreal) à partir de litto3d :
+- Prendre fichier asc dans MNT1m (précision 1 mètres)
+- Dans OSGeo4W shell, tapper la commande :
+```	gdal_translate -of PNG -ot UInt16 -scale min max 0 65535 nom.asc output.png ```
+min et max sont visible dans QGIS quand on charge asc (carré noir et blanc sous le nom de l’asc)
+Ca va donner un heightmap 16 bit en nuance de gris (ce que veut unreal).
+``` gdal_translate -of PNG -ot UInt16 -scale -327.68 327.67 0 65535 nom.asc output.png ```
+
 #### Tâches proposées
 - Génération automatique (par code et non interaction avec GUI Unreal) du terrain via heightmap
   - voir le code source de cashgenue https://github.com/midgen/cashgenUE si possibilité de trouver si réutilisable
@@ -36,7 +44,7 @@ Avec aide + ou - ponctuelle d'Yvan et tous
 
 ## Données potentiellement intéressantes
 
-![alt text](https://github.com/yvanlebras/OceanHackathonJeumeauNumerique/IMG_20201010_095723.jpg)
+<img src="https://github.com/yvanlebras/OceanHackathonJeumeauNumerique/raw/main/IMG_20201010_095723.jpg" width="800" />
 
 Source des données :
 - Indigeo: https://oceanhackathon.indigeo.fr/geocms/maps/oceanhackathon-wpjdbpbc#project
@@ -82,12 +90,25 @@ SOURCE : OCEAN-HACKATHON
 - GEBCO_LATEST
 SOURCE : GEBCO - UNESCO
 
+- EMODnet 
+  - Dataset information website: https://www.emodnet-biology.eu/thermal-affinities-european-marine-species
+  - GitHub page for the dataset: https://github.com/EMODnet/EMODnet-Biology-thermal-traits
+
 ### Climat
+- General Circulation Model 
+  - Regional Climate Model
+- Worldclim Bioclim https://www.worldclim.org/data/bioclim.html
 
 ### Météo
 
 ### impact humain
 - AIS
   - AIS GLOBAL / SOURCE : UNIVERSITÉ LE HAVRE - AISHUB
-  - IRENAV - Heterogeneous Integrated Dataset for Maritime Intelligence, Surveillance, and Reconnaissance / SOURCE : OCEAN-HACKATHON
+  - IRENAV - Heterogeneous Integrated Dataset for Maritime Intelligence, Surveillance, and Reconnaissance / SOURCE : OCEAN-HACKATHON https://zenodo.org/record/1167595#.X4F5KtAzbcc
 
+## Let's go for the "Jeu" !!!
+
+<img src="https://github.com/yvanlebras/OceanHackathonJeumeauNumerique/raw/main/IMG_20201010_114951.jpg" width="800" />
+
+## Conclusions préliminaires
+=> se focaliser sur une harmonisation des fichiers pour ne faire manger à la "DigitalTwins Factory" que des fichiers au format [asc](https://gis.stackexchange.com/questions/71867/understanding-esris-asc-file) OU png en niveau de gris.
