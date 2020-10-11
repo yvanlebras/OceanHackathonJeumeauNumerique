@@ -109,3 +109,6 @@ SOURCE : GEBCO - UNESCO
 ## Let's go for the "Jeu" !!!
 
 <img src="https://github.com/yvanlebras/OceanHackathonJeumeauNumerique/raw/main/IMG_20201010_114951.jpg" width="800" />
+
+## Conclusions préliminaires
+=> se focaliser sur une harmonisation des fichiers pour ne faire manger à la "DigitalTwins Factory" que des fichiers au format [asc](https://gis.stackexchange.com/questions/71867/understanding-esris-asc-file) OU png en niveau de gris.
